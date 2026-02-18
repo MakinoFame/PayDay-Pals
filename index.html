@@ -4,145 +4,125 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>PayDay Pals</title>
-<!-- Optional: Link to Google Fonts for enhanced typography -->
-<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto&display=swap" rel="stylesheet" />
+<!-- Google Fonts for bright, playful typography -->
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Comic+Neue&display=swap" rel="stylesheet" />
 <script>
 alert("Welcome Pals");
 </script>
 <style>
-  body {
-    font-family: 'Roboto', Arial, sans-serif;
-    margin: 20px;
-    /* Background image with improved clarity */
-    background-image: url(https://api.deepai.org/job-view-file/bd9f24de-809e-4112-b1ec-3d7532434bb6/outputs/output.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+  /* Reset some default styles */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
   }
 
-  /* Optional overlay for readability */
-  /* body::before {
-    content: "";
-    position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background-color: rgba(255,255,255,0.3);
-    z-index: -1;
-  } */
+  body {
+    font-family:Calisto MT, serif;
+    margin: 0;
+    padding: 20px;
+    background: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1350&q=80') no-repeat center center fixed;
+    background-attachment: fixed;
+    color: #ffffff;
+  }
 
-  /* Stylish Heading */
+  /* Heading with bright gradient and shadow */
   h1 {
     text-align: center;
-    font-family: 'Pacifico', cursive;
-    font-size: 3em;
-    background: linear-gradient(45deg, #e7a8a8, #e6b30d);
+    font-family: Comic Sans MS, cursive;
+    color: #fff;
+    font-size: 8em;
+    background: linear-gradient(45deg, #00ff0d, #0004ff);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    padding: 20px 10px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    padding: 20px;
     margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
   }
 
-  /* Main table for the group */
-  table.group-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 0 auto;
+  /* Use Flexbox for the container to make it responsive */
+  .members-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
   }
 
-  /* Style for each member cell */
-  td.member-cell {
-    vertical-align: top;
-    border: 1px solid #ccc;
-    padding: 10px;
-    width: 14%; /* roughly 1/7th of the table width */
-    background-color: rgba(255, 255, 255, 0.8);
-    border-radius: 8px;
+  /* Member card styling */
+  .member-card {
+    background-color: rgba(61, 39, 53, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    width: 250px;
+    padding: 15px;
     transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
   }
 
-  /* Hover effect for member cells */
-  td.member-cell:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+  /* Hover effect on cards */
+  .member-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.3);
+    background-color: rgba(10, 67, 255, 0.8);
   }
 
-  /* Member inner table */
-  table.member-details {
-    width: 100%;
-    border-collapse: collapse;
-  }
-
-  /* Style for images */
+  /* Member image styling */
   .member-image {
     display: block;
-    margin: 0 auto 10px auto;
-    width: 50%;
-    max-width: 100px;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    width: 100%;
+    margin: 0 auto 15px auto;
+    width: 80%;
+    max-width: 150px;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     transition: transform 0.3s;
   }
 
-  /* Hover effect on images */
+  /* Image hover effect */
   .member-image:hover {
-    transform: scale(1.05);
+    transform: scale(1.1);
   }
 
-  /* Style for member names to make them stand out */
+  /* Member name style */
   .member-name {
-    font-family: 'arial black', sans-serif;
-    font-size: 1.2em;
-    color: #333;
     text-align: center;
-    margin-bottom: 8px;
-    padding: 4px 8px;
-    background: linear-gradient(135deg, #000000, #ACB6E5);
+    font-family:Franklin Gothic Medium, Arial Narrow, Arial, sans-serif;
+    font-size: 1.4em;
+    background: linear-gradient(135deg, #f0edea, #ffd200);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    border-radius: 4px;
-    transition: background 0.3s, color 0.3s;
+    margin-bottom: 10px;
   }
 
-  /* Make the name cells more visible with background and border */
-  .name-cell {
-    background-color: #fff6b7; /* Light yellow background for visibility */
-    border: 2px solid #ffa500; /* Bright orange border */
-    border-radius: 4px;
-    padding: 4px;
-    margin: 0 auto;
+  /* Member info table styles */
+  table.info-table {
+    width: 100%;
+    margin-top: 10px;
   }
 
-  /* Hover effect for names cells */
-  .name-cell:hover {
-    background-color: #ffe4b2; /* Slightly darker on hover */
-    border-color: #ff8c00;
+  table.info-table th {
+    background-color: #0ca5e2;
+    padding: 7px;
+    color: #fff;
+    border-radius: 6px;
   }
 
-  /* Inner table headers */
-  th {
-    background-color: #4CAF50;
-    color: white;
-    padding: 5px;
-    text-align: left;
-  }
-
-  /* Inner table cells */
-  td {
-    padding: 5px;
-    border: 1px solid #ddd;
+  table.info-table td {
+    padding: 7px;
+    background-color: #fff;
+    color: #070707;
+    border-radius:5px;
+    font-family: Gill Sans, sans-serif;
+    font-size: 1.1em;
+    
   }
 
   /* Responsive adjustments */
-  @media(max-width: 1000px){
-    table.group-table {
-      display: block;
-    }
-    td.member-cell {
-      width: 100%;
-      display: block;
-      margin-bottom: 20px;
+  @media(max-width: 800px){
+    .members-container {
+      flex-direction: column;
+      align-items: center;
     }
   }
 </style>
@@ -151,161 +131,109 @@ alert("Welcome Pals");
 
 <h1>PayDay Pals</h1>
 
-<table class="group-table">
-  <tr>
-    <!-- Member 1 -->
-    <td class="member-cell">
-      <table class="member-details">
-        <tr>
-          <td colspan="2" style="text-align:center;">
-            <img src="adu.jpg" alt="Member 1" class="member-image" />
-          </td>
-        </tr>
-        <tr>
-          <td colspan="2" class="member-name name-cell">Pte Abaka</td>
-        </tr>
-        <tr>
-          <th>Contribution</th>
-          <td>$1,750</td>
-        </tr>
-        <tr>
-          <th>Status</th>
-          <td>Settled</td>
-        </tr>
-      </table>
-    </td>
-    <!-- Member 2 -->
-    <td class="member-cell">
-      <table class="member-details">
-        <tr>
-          <td colspan="2" style="text-align:center;">
-            <img src="joe.jpg" alt="Member 2" class="member-image" />
-          </td>
-        </tr>
-        <tr>
-          <td colspan="2" class="member-name name-cell">Pte Godome</td>
-        </tr>
-        <tr>
-          <th>Contribution</th>
-          <td>$1,750</td>
-        </tr>
-        <tr>
-          <th>Status</th>
-          <td>Settled</td>
-        </tr>
-      </table>
-    </td>
-    <!-- Member 3 -->
-    <td class="member-cell">
-      <table class="member-details">
-        <tr>
-          <td colspan="2" style="text-align:center;">
-            <img src="https://via.placeholder.com/200" alt="Member 3" class="member-image" />
-          </td>
-        </tr>
-        <tr>
-          <td colspan="2" class="member-name name-cell">Pte Muniru</td>
-        </tr>
-        <tr>
-          <th>Contribution</th>
-          <td>$1,750</td>
-        </tr>
-        <tr>
-          <th>Status</th>
-          <td>Settled</td>
-        </tr>
-      </table>
-    </td>
-    <!-- Member 4 -->
-    <td class="member-cell">
-      <table class="member-details">
-        <tr>
-          <td colspan="2" style="text-align:center;">
-            <img src="https://via.placeholder.com/200" alt="Member 4" class="member-image" />
-          </td>
-        </tr>
-        <tr>
-          <td colspan="2" class="member-name name-cell">Pte Addai</td>
-        </tr>
-        <tr>
-          <th>Contribution</th>
-          <td>$1,750</td>
-        </tr>
-        <tr>
-          <th>Status</th>
-          <td>Settled</td>
-        </tr>
-      </table>
-    </td>
-  </tr>
-  <tr>
-    <!-- Member 5 -->
-    <td class="member-cell">
-      <table class="member-details">
-        <tr>
-          <td colspan="2" style="text-align:center;">
-            <img src="mike.jpg" alt="Member 5" class="member-image" />
-          </td>
-        </tr>
-        <tr>
-          <td colspan="2" class="member-name name-cell">Pte Asiamah</td>
-        </tr>
-        <tr>
-          <th>Contribution</th>
-          <td>$1,750</td>
-        </tr>
-        <tr>
-          <th>Status</th>
-          <td>Settled</td>
-        </tr>
-      </table>
-    </td>
-    <!-- Member 6 -->
-    <td class="member-cell">
-      <table class="member-details">
-        <tr>
-          <td colspan="2" style="text-align:center;">
-            <img src="amako.jpg" alt="Member 6" class="member-image" />
-          </td>
-        </tr>
-        <tr>
-          <td colspan="2" class="member-name name-cell">Pte Amonkona</td>
-        </tr>
-        <tr>
-          <th>Contribution</th>
-          <td>$1,750</td>
-        </tr>
-        <tr>
-          <th>Status</th>
-          <td>Acive</td>
-        </tr>
-      </table>
-    </td>
-    <!-- Member 7 -->
-    <td class="member-cell">
-      <table class="member-details">
-        <tr>
-          <td colspan="2" style="text-align:center;">
-            <img src="https://via.placeholder.com/200" alt="Member 7" class="member-image" />
-          </td>
-        </tr>
-        <tr>
-          <td colspan="2" class="member-name name-cell">Pte Kusi</td>
-        </tr>
-        <tr>
-          <th>Contribution</th>
-          <td>$1,750</td>
-        </tr>
-        <tr>
-          <th>Status</th>
-          <td>Pending</td>
-        </tr>
-      </table>
-    </td>
-  </tr>
-</table>
+<div class="members-container">
+  <!-- Existing Members -->
+  <div class="member-card">
+    <img src="https://tse1.mm.bing.net/th/id/OIP.hvmrnCJNVf6ko4UwNwcdvQHaHx?rs=1&pid=ImgDetMain&o=7&rm=3.jpg" alt="Pte Abaka" class="member-image" />
+    <div class="member-name">Pte Kusi</div>
+    <table class="info-table">
+      <tr>
+        <th>Contribution</th>
+        <td>$2,000</td>
+      </tr>
+      <tr>
+        <th>Status</th>
+        <td>Pending</td>
+      </tr>
+    </table>
+  </div>
+  <div class="member-card">
+    <img src="https://tse1.mm.bing.net/th/id/OIP.hvmrnCJNVf6ko4UwNwcdvQHaHx?rs=1&pid=ImgDetMain&o=7&rm=3.jpg" alt="Pte Godome" class="member-image" />
+    <div class="member-name">Pte Amonkona</div>
+    <table class="info-table">
+      <tr>
+        <th>Contribution</th>
+        <td>$2,000</td>
+      </tr>
+      <tr>
+        <th>Status</th>
+        <td>Pending</td>
+      </tr>
+    </table>
+  </div>
+  <div class="member-card">
+    <img src="https://tse1.mm.bing.net/th/id/OIP.hvmrnCJNVf6ko4UwNwcdvQHaHx?rs=1&pid=ImgDetMain&o=7&rm=3.jpg" alt="Pte Muniru" class="member-image" />
+    <div class="member-name">Pte Muniru</div>
+    <table class="info-table">
+      <tr>
+        <th>Contribution</th>
+        <td>$2,000</td>
+      </tr>
+      <tr>
+        <th>Status</th>
+        <td>Pending</td>
+      </tr>
+    </table>
+  </div>
+  <div class="member-card">
+    <img src="https://tse1.mm.bing.net/th/id/OIP.hvmrnCJNVf6ko4UwNwcdvQHaHx?rs=1&pid=ImgDetMain&o=7&rm=3.jpg" alt="Pte Addai" class="member-image" />
+    <div class="member-name">Pte Godome</div>
+    <table class="info-table">
+      <tr>
+        <th>Contribution</th>
+        <td>$2,000</td>
+      </tr>
+      <tr>
+        <th>Status</th>
+        <td>Pending</td>
+      </tr>
+    </table>
+  </div>
+  <div class="member-card">
+    <img src="https://tse1.mm.bing.net/th/id/OIP.hvmrnCJNVf6ko4UwNwcdvQHaHx?rs=1&pid=ImgDetMain&o=7&rm=3.jpg" class="member-image" />
+    <div class="member-name">Pte Addai</div>
+    <table class="info-table">
+      <tr>
+        <th>Contribution</th>
+        <td>$2,000</td>
+      </tr>
+      <tr>
+        <th>Status</th>
+        <td>Pending</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- New Members: Kusi and Amonkona -->
+  <div class="member-card">
+    <img src="https://tse1.mm.bing.net/th/id/OIP.hvmrnCJNVf6ko4UwNwcdvQHaHx?rs=1&pid=ImgDetMain&o=7&rm=3.jpg" alt="Pte Kusi" class="member-image" />
+    <div class="member-name">Pte Asiamah</div>
+    <table class="info-table">
+      <tr>
+        <th>Contribution</th>
+        <td>$2,000</td>
+      </tr>
+      <tr>
+        <th>Status</th>
+        <td>Pending</td>
+      </tr>
+    </table>
+  </div>
+  <div class="member-card">
+    <img src="https://tse1.mm.bing.net/th/id/OIP.hvmrnCJNVf6ko4UwNwcdvQHaHx?rs=1&pid=ImgDetMain&o=7&rm=3.jpg" alt="Pte Amonkona" class="member-image" />
+    <div class="member-name">Pte Abaka</div>
+    <table class="info-table">
+      <tr>
+        <th>Contribution</th>
+        <td>$2,000</td>
+      </tr>
+      <tr>
+        <th>Status</th>
+        <td>Pending</td>
+      </tr>
+    </table>
+  </div>
+</div>
 
 </body>
 </html>
-
-
