@@ -18,11 +18,12 @@ alert("Welcome Pals");
   }
 
   body {
-    font-family:Calisto MT, serif;
+    font-family: Calisto MT, serif;
     margin: 0;
     padding: 20px;
     background: url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1350&q=80') no-repeat center center fixed;
     background-attachment: fixed;
+    background-size: cover;
     color: #ffffff;
   }
 
@@ -69,10 +70,9 @@ alert("Welcome Pals");
   /* Member image styling */
   .member-image {
     display: block;
-    width: 100%;
-    margin: 0 auto 15px auto;
     width: 80%;
     max-width: 150px;
+    margin: 0 auto 15px auto;
     border-radius: 50%;
     border: 3px solid #fff;
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
@@ -87,7 +87,7 @@ alert("Welcome Pals");
   /* Member name style */
   .member-name {
     text-align: center;
-    font-family:Franklin Gothic Medium, Arial Narrow, Arial, sans-serif;
+    font-family: Franklin Gothic Medium, Arial Narrow, Arial, sans-serif;
     font-size: 1.4em;
     background: linear-gradient(135deg, #f0edea, #ffd200);
     -webkit-background-clip: text;
@@ -112,10 +112,9 @@ alert("Welcome Pals");
     padding: 7px;
     background-color: #fff;
     color: #070707;
-    border-radius:5px;
+    border-radius: 5px;
     font-family: Gill Sans, sans-serif;
     font-size: 1.1em;
-    
   }
 
   /* Responsive adjustments */
@@ -132,9 +131,9 @@ alert("Welcome Pals");
 <h1>PayDay Pals</h1>
 
 <div class="members-container">
-  <!-- Existing Members -->
+  <!-- Pte Kusi -->
   <div class="member-card">
-    <img src="https://tse1.mm.bing.net/th/id/OIP.hvmrnCJNVf6ko4UwNwcdvQHaHx?rs=1&pid=ImgDetMain&o=7&rm=3.jpg" alt="Pte Abaka" class="member-image" />
+    <img src="https://tse1.mm.bing.net/th/id/OIP.hvmrnCJNVf6ko4UwNwcdvQHaHx?rs=1&pid=ImgDetMain&o=7&rm=3.jpg" alt="Pte Kusi" class="member-image" />
     <div class="member-name">Pte Kusi</div>
     <table class="info-table">
       <tr>
@@ -147,9 +146,10 @@ alert("Welcome Pals");
       </tr>
     </table>
   </div>
+  <!-- Pte Amankona -->
   <div class="member-card">
-    <img src="https://tse1.mm.bing.net/th/id/OIP.hvmrnCJNVf6ko4UwNwcdvQHaHx?rs=1&pid=ImgDetMain&o=7&rm=3.jpg" alt="Pte Godome" class="member-image" />
-    <div class="member-name">Pte Amonkona</div>
+    <img src="https://tse1.mm.bing.net/th/id/OIP.hvmrnCJNVf6ko4UwNwcdvQHaHx?rs=1&pid=ImgDetMain&o=7&rm=3.jpg" alt="Pte Amankona" class="member-image" />
+    <div class="member-name">Pte Amankona</div>
     <table class="info-table">
       <tr>
         <th>Contribution</th>
@@ -161,6 +161,7 @@ alert("Welcome Pals");
       </tr>
     </table>
   </div>
+  <!-- Pte Muniru -->
   <div class="member-card">
     <img src="https://tse1.mm.bing.net/th/id/OIP.hvmrnCJNVf6ko4UwNwcdvQHaHx?rs=1&pid=ImgDetMain&o=7&rm=3.jpg" alt="Pte Muniru" class="member-image" />
     <div class="member-name">Pte Muniru</div>
@@ -175,8 +176,9 @@ alert("Welcome Pals");
       </tr>
     </table>
   </div>
+  <!-- Pte Godome -->
   <div class="member-card">
-    <img src="https://tse1.mm.bing.net/th/id/OIP.hvmrnCJNVf6ko4UwNwcdvQHaHx?rs=1&pid=ImgDetMain&o=7&rm=3.jpg" alt="Pte Addai" class="member-image" />
+    <img src="https://tse1.mm.bing.net/th/id/OIP.hvmrnCJNVf6ko4UwNwcdvQHaHx?rs=1&pid=ImgDetMain&o=7&rm=3.jpg" alt="Pte Godome" class="member-image" />
     <div class="member-name">Pte Godome</div>
     <table class="info-table">
       <tr>
@@ -189,8 +191,9 @@ alert("Welcome Pals");
       </tr>
     </table>
   </div>
+  <!-- Pte Addai -->
   <div class="member-card">
-    <img src="https://tse1.mm.bing.net/th/id/OIP.hvmrnCJNVf6ko4UwNwcdvQHaHx?rs=1&pid=ImgDetMain&o=7&rm=3.jpg" class="member-image" />
+    <img src="https://tse1.mm.bing.net/th/id/OIP.hvmrnCJNVf6ko4UwNwcdvQHaHx?rs=1&pid=ImgDetMain&o=7&rm=3.jpg" alt="Pte Addai" class="member-image" />
     <div class="member-name">Pte Addai</div>
     <table class="info-table">
       <tr>
@@ -203,10 +206,39 @@ alert("Welcome Pals");
       </tr>
     </table>
   </div>
-
-  <!-- New Member: Pte Sarkodie -->
+  <!-- Pte Asiamah -->
   <div class="member-card">
-    <img src="https://tse1.mm.bing.net/th/id/OIP.hvmrnCJNVf6ko4UwNwcdvQHaHx?rs=1&pid=ImgDetMain&o=7&rm=3.jpg" alt="Pte SARKODIE" class="member-image" />
+    <img src="https://tse1.mm.bing.net/th/id/OIP.hvmrnCJNVf6ko4UwNwcdvQHaHx?rs=1&pid=ImgDetMain&o=7&rm=3.jpg" alt="Pte Asiamah" class="member-image" />
+    <div class="member-name">Pte Asiamah</div>
+    <table class="info-table">
+      <tr>
+        <th>Contribution</th>
+        <td>$2,000</td>
+      </tr>
+      <tr>
+        <th>Status</th>
+        <td>Pending</td>
+      </tr>
+    </table>
+  </div>
+  <!-- Pte Abaka -->
+  <div class="member-card">
+    <img src="https://tse1.mm.bing.net/th/id/OIP.hvmrnCJNVf6ko4UwNwcdvQHaHx?rs=1&pid=ImgDetMain&o=7&rm=3.jpg" alt="Pte Abaka" class="member-image" />
+    <div class="member-name">Pte Abaka</div>
+    <table class="info-table">
+      <tr>
+        <th>Contribution</th>
+        <td>$2,000</td>
+      </tr>
+      <tr>
+        <th>Status</th>
+        <td>Pending</td>
+      </tr>
+    </table>
+  </div>
+  <!-- Pte Sarkodie -->
+  <div class="member-card">
+    <img src="https://tse1.mm.bing.net/th/id/OIP.hvmrnCJNVf6ko4UwNwcdvQHaHx?rs=1&pid=ImgDetMain&o=7&rm=3.jpg" alt="Pte Sarkodie" class="member-image" />
     <div class="member-name">Pte Sarkodie</div>
     <table class="info-table">
       <tr>
@@ -219,7 +251,6 @@ alert("Welcome Pals");
       </tr>
     </table>
   </div>
-
 </div>
 </body>
 </html>
